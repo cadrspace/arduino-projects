@@ -113,6 +113,7 @@ void setup() {
 }
 
 long old_distance = 0;
+boolean visitor_detected = false;
 
 void loop() {
   distance = sonar.ping_cm();
@@ -120,14 +121,21 @@ void loop() {
   if ((distance > MINIMUM_RANGE) && (distance <= max_distance)) {
     if (abs(distance - old_distance) > threshold) {
       old_distance = distance;
-      reset(0);
-      reset(offset);
-      show_number(++visitors_counter);
-      
       Serial.print(F("Distance: "));
       Serial.println(distance);
-      Serial.print(F("CADR Visitors: "));
-      Serial.println(visitors_counter);
+      if (! visitor_detected) {
+	visitor_detected = true;
+
+	Serial.println(F("Visitor detected."));
+	Serial.print(F("CADR Visitors: "));
+	Serial.println(visitors_counter);
+
+	reset(0);
+	reset(offset);
+	show_number(++visitors_counter);
+      } else {
+	visitor_detected = false;
+      }
 
       delay(DETECTION_DELAY);
     }
