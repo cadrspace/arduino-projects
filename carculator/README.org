@@ -1,0 +1,9 @@
+* CARculator
+
+  I need your case, your bootloader and your motherboard!
+
+** So what it is?
+
+   CARculator is a simple arduino-based lispy carculator.  Nothing
+   unusual, huh?  But consider the fact that the carculator uses a
+   [[https://en.wikipedia.org/wiki/Rotary_dial][rotary dial]] from an old phone as the main user interface.
