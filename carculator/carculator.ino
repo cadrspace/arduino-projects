@@ -119,6 +119,9 @@ int eval(int function, int arg1, int arg2) {
     return num1 - num2;
   case MUL:
     return num1 * num2;
+  default:
+    /* XXX: A dirty hack, needs to be fixed. */
+    return eval(PLUS, arg1, arg2);
   }
 }
 
