@@ -149,7 +149,7 @@ void handleButton() {
   case EVAL:
     lcd.setCursor(0, 1);
     lcd.print(F("=> "));
-    lcd.print(eval(function, num1, num1));
+    lcd.print(eval(function, num1, num2));
     function = 1;
     num1 = 0;
     num2 = 0;
