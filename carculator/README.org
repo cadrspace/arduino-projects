@@ -7,3 +7,7 @@
    CARculator is a simple arduino-based lispy carculator.  Nothing
    unusual, huh?  But consider the fact that the carculator uses a
    [[https://en.wikipedia.org/wiki/Rotary_dial][rotary dial]] from an old phone as the main user interface.
+
+** How to connect a rotary dial?
+   Here's an instruction (mostly in Russian):
+   https://cadrspace.ru/w/index.php/Arduino/RotaryDial
