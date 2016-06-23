@@ -225,7 +225,7 @@ static char* fortunes[] = {
 
 inline void
 attachInterruptToPin(int pin, void (*callback)(), int mode) {
-  attachInterrupt(digitalPinToInterrupt(pin), handleButton, mode);
+  attachInterrupt(digitalPinToInterrupt(pin), callback, mode);
 }
 
 void setup() {
