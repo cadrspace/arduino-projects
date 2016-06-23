@@ -65,10 +65,8 @@ char* functionToString (int function) {
   switch (function) {
   case PLUS:
     return "+";
-    break;
   case MINUS:
     return "-";
-    break;
   case MUL:
     return "*";
   default:
