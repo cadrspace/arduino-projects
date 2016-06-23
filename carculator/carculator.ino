@@ -223,6 +223,11 @@ static char* fortunes[] = {
 
 /* Initialization. */
 
+inline void
+attachInterruptToPin(int pin, void (*callback)(), int mode) {
+  attachInterrupt(digitalPinToInterrupt(pin), handleButton, mode);
+}
+
 void setup() {
   Serial.begin(9600);
 
@@ -235,15 +240,9 @@ void setup() {
   // set up the LCD's number of columns and rows: 
   lcd.begin(LCD_WIDTH, LCD_HIGHT);
 
-  attachInterrupt(digitalPinToInterrupt(IN_BTN_PIN),
-                  handleButton,
-                  RISING);
-  attachInterrupt(digitalPinToInterrupt(IN_START_PIN),
-                  handleStop,
-                  FALLING);
-  attachInterrupt(digitalPinToInterrupt(IN_DIGIT_PIN),
-                  handleDigit,
-                  FALLING);
+  attachInterruptToPin(IN_BTN_PIN, handleButton, RISING);
+  attachInterruptToPin(IN_START_PIN, handleStop, FALLING);
+  attachInterruptToPin(IN_DIGIT_PIN, handleDigit, FALLING);
 }
 
 
