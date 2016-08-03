@@ -1,0 +1,7 @@
+* Chasing lights in AVR assembler
+** How to build and upload
+#+BEGIN_EXAMPLE
+$ make upload
+#+END_EXAMPLE
+** What digital ports are in use
+The project uses Arduino digital ports from 2 to 13.
